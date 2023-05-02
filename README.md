@@ -1,2 +1,2 @@
-# rust-for-ts-devs
+# rust-for-web-devs
 Rust for web developer 
