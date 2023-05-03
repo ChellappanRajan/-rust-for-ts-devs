@@ -141,6 +141,24 @@ fn main() {
     let fo = Some(1);
     let fo = fo.unwrap();
 
+    let mut x = 5;
+    let z = x; //Read only
+    let y = &mut x; //Read and write 
+    print!("{}",y);
+     x = 10;
+    print!("{}",x);
+    // print!("{}",);
+   //All are expression in rust
+    // let foo = if true{
+    //     return true;
+    // }
+
+//Excercise
+    let num = vec![1,2,3];
+     //Vec<_> _ - means infer type automatically
+     let result:Vec<_> = vec![1,2,3].iter().map(|x| x+1).collect();
+     print!("{:?}",result);
+     print!("{:?}",result);
 
 
 
