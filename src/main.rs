@@ -96,6 +96,52 @@ fn main() {
         }
     }
 
+    //Numbers   
+    //   usize,isize,f
+
+   //There are two types String and &str
+     //String heap allocated, mutable
+     //&str immutable,commonly called slice
+    
+
+   //Vector
+    let mut a = vec![1,2,3,4,5,6];
+    a[1]; //out of bounds, panic
+    a.get(1); //Safe way
+
+    a.push(7);
+    a.pop();
+    
+  //Tuble
+  let a = (5,String::from("helo"));
+   //pattern matching similar to destructring
+    let (my_num,my_str) = a;
+    // fn b((a,b):(i32,String)){}
+    //fn v(Mystruct{x,y,..}:MyStruct){} // pattern matching will work with struct also
+
+    struct MyStruct{
+        x:i32,
+        y:i32,
+        eventType:String
+    }
+    let foo = MyStruct{
+        x:10,
+        y:20,
+        eventType:String::from("click")
+    };
+
+    let MyStruct{x,y,..} = foo;
+    let MyStruct{x,y,eventType} = foo;
+
+    //Pattern matching with if condition
+    // if let MyStruct{x,..} = foo{
+    //     print!("{}",x);
+    // }
+    //unwrap grap inner value of result/option
+    let fo = Some(1);
+    let fo = fo.unwrap();
+
+
 
 
 }
