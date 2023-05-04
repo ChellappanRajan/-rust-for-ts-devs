@@ -1,0 +1,6 @@
+helo
+world
+i
+am 
+learning
+rust
