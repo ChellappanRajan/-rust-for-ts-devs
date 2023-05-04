@@ -209,5 +209,25 @@ fn print_color(color:Color){
   }
 }
 
+enum Item{
+    Number(usize),
+    String(String)
+}
+
+// let mut new_items: Vec<Item> = vec![];
+
+fn append(items: &mut Vec<Item>){
+    items.push(Item::String("Hello".into()))
+}
+
+fn multiply(num: Option<usize>)->usize{
+    return  num.unwrap_or(0);
+}
+fn multiply_undefined(num: Option<usize>)->Option<usize>{
+    return  num.map(|x| x * 5);
+}
+
+
+
 }
 
