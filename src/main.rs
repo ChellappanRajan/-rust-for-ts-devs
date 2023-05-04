@@ -160,6 +160,18 @@ fn main() {
      print!("{:?}",result);
      print!("{:?}",result);
 
+     let data: Vec<i32> =  vec![1,2,3];
+      let mut foo = data.iter().map(|x| x+1);
+     let mut new_vector:Vec<i32> = vec![];
+
+      while let Some(x) = foo.next(){
+        new_vector.push(x);
+      }
+      print!("{:?}",new_vector);
+    
+    let read_file = std::fs::read_to_string("files.txt").unwrap();
+
+    read_file.lines().for_each(|txt| println!("{}",txt));
 
 
 }
