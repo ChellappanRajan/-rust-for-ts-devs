@@ -1,3 +1,5 @@
+use std::process::id;
+
 fn main() {
     //Variables
     let foo = 5; //Which is similar to ts const foo = 5; immutable
@@ -227,6 +229,14 @@ fn multiply_undefined(num: Option<usize>)->Option<usize>{
     return  num.map(|x| x * 5);
 }
 
+
+fn practice(list:Vec<usize>,idx:usize)->usize{
+    // let a = list.get(idx)?;
+    // if let Some(x) = list.get(idx){
+    //     return x;
+    // }
+    return list.get(idx).unwrap_or(&idx) * 5;
+}
 
 
 }
