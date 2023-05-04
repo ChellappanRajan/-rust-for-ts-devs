@@ -170,9 +170,44 @@ fn main() {
       print!("{:?}",new_vector);
     
     let read_file = std::fs::read_to_string("files.txt").unwrap();
+    read_file.lines().enumerate().filter(|(idx,va)|idx%2==0).for_each(|txt| println!("{:?}",txt));
+    // read_file.lines().enumerate().filter(|(idx,va)|idx%2==0).filter(|(idx,newLin)| idx >= 2 && idx <= 4 ).for_each(|txt| println!("{:?}",txt));
 
-    read_file.lines().for_each(|txt| println!("{}",txt));
+//Enum
 
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+
+impl Color{
+    fn is_red(&self) -> bool{
+       if let Color::Red = self{
+        return true;
+       }
+       false
+    }
+    fn is_red_parts(&self)->bool{
+        match self{
+            Color::Blue=> false,
+            Color::Red =>true,
+            _ => false
+        }
+    }
+}
+
+let foo = Color::Blue;
+print!("{}",
+foo.is_red());
+
+fn print_color(color:Color){
+  match color {
+     Color::Blue=> print!("Blue"),
+     Color::Red=> print!("Red"),
+     Color::Green=> print!("Green")
+  }
+}
 
 }
 
