@@ -238,6 +238,14 @@ fn practice(list:Vec<usize>,idx:usize)->usize{
     return list.get(idx).unwrap_or(&idx) * 5;
 }
 
+// if let Some(x) = std::env::args().nth(1){
+//     return; x;
+// }
+
+let arg = std::env::args().nth(1).expect("file name to be passed in");
+let file = std::fs::read_to_string(arg).expect("Error occured");
+file.lines().for_each(|x|print!("{}",x));
+
 
 }
 
