@@ -1,4 +1,4 @@
-use std::process::id;
+use std::{process::id, f64::consts::PI};
 
 fn main() {
     //Variables
@@ -242,10 +242,56 @@ fn practice(list:Vec<usize>,idx:usize)->usize{
 //     return; x;
 // }
 
-let arg = std::env::args().nth(1).expect("file name to be passed in");
-let file = std::fs::read_to_string(arg).expect("Error occured");
-file.lines().for_each(|x|print!("{}",x));
+// let arg = std::env::args().nth(1).expect("file name to be passed in");
+// let file = std::fs::read_to_string(arg).expect("Error occured");
+// file.lines().for_each(|x|print!("{}",x));
 
+//Traits-similar to ts interface
+
+struct  Rectangle {
+    width:f64,
+    x:f64,
+    y:f64,
+    height:f64
+
+}
+
+struct  Circle {
+    radious:f64,
+    x:f64,
+    y:f64,
+}
+trait Area {
+    fn  area(&self)->f64;
+}
+
+impl Area for Rectangle {
+    fn area(&self)->f64{
+        return self.width * self.height;
+    }
+}
+
+impl Area for Circle{
+    fn area(&self)->f64{
+        return self.radious * self.radious * PI;
+    }
+}
+
+
+let rect = Rectangle{
+    height:10.0,
+    width:10.0,
+    x:0.0,
+    y:0.0
+};
+
+let cir = Circle{
+    radious:2.0,
+    x:0.0,
+    y:0.0
+};
+println!("Cir Result:: {:?}",cir.area());
+print!("Result::    {:?}",rect.area());
 
 }
 
