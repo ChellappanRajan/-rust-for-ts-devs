@@ -1,3 +1,5 @@
+use std::default;
+
 use super::area::Area;
 
 pub struct  Rectangle {
@@ -11,5 +13,17 @@ pub struct  Rectangle {
  impl Area for Rectangle {
     fn area(&self)->f64{
         return self.width * self.height;
+    }
+}
+
+//Create struct with defautl value.
+impl Default for Rectangle {
+    fn default()->Self{
+        Rectangle{
+            height:10.0,
+            width:10.0,
+            x:0.0,
+            y:0.0
+        }
     }
 }
