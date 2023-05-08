@@ -1,9 +1,9 @@
 use std::{process::id};
 
-use crate::shapes::Circle;
+use crate::shapes::{circle::Circle,rect::Rectangle,area::Area};
 
 mod shapes;
-use  shapes::{Area};
+
 
 
 fn main() {
@@ -253,7 +253,7 @@ fn practice(list:Vec<usize>,idx:usize)->usize{
 // file.lines().for_each(|x|print!("{}",x));
 
 
-let rect = shapes::Rectangle{
+let rect = Rectangle{
     height:10.0,
     width:10.0,
     x:0.0,
