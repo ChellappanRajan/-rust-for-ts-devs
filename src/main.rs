@@ -253,20 +253,12 @@ fn practice(list:Vec<usize>,idx:usize)->usize{
 // file.lines().for_each(|x|print!("{}",x));
 
 
-let rect = Rectangle{
-    height:10.0,
-    width:10.0,
-    x:0.0,
-    y:0.0
-};
+let rect = Rectangle::default();
+let cir = Circle::default();
 
-let cir = Circle{
-    radious:2.0,
-    x:0.0,
-    y:0.0
-};
 println!("Cir Result:: {:?}",cir.area()); //This area train only visible if we import this train from shapes file
-print!("Result::    {:?}",rect.area());
+print!("Result::    {:}",rect.area());
+print!("{}",cir);
 
 }
 
