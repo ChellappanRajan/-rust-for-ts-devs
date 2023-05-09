@@ -27,3 +27,10 @@ impl Default for Rectangle {
         }
     }
 }
+
+impl Iterator for Rectangle {
+    type Item = (f64,f64);
+    fn next(&mut self) -> Option<Self::Item> {
+        Some((self.x,self.y))   
+    }
+}
